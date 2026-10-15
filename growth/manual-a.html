@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>FENG | Growth — Manual da operação</title>
+<script src="manual-data.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
+<style>
+
+*{box-sizing:border-box}
+html,body{margin:0;background:#f7f5f7;color:#27242c;font-family:'DM Sans',Arial,sans-serif;font-size:15px;line-height:1.5}
+a{color:#762273}a:hover{color:#351937}
+button,select{font:inherit;cursor:pointer;color:inherit}
+button:focus-visible,select:focus-visible{outline:3px solid #fe813e;outline-offset:2px}
+</style>
+</helmet>
+<div style="min-height:100vh">
+<header style="position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #e4dce5">
+  <div style="max-width:1360px;margin:0 auto;padding:14px 36px;display:flex;align-items:center;gap:28px;flex-wrap:wrap">
+    <button onClick="{{ goMapa }}" aria-label="FENG — início" style="background:none;border:0;padding:0;display:flex;align-items:center;gap:18px">
+      <img src="assets/feng-logo.png" alt="FENG" style="width:92px;display:block">
+      <span style="border-left:1px solid #e4dce5;padding-left:18px;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:#716773;text-align:left;line-height:1.4">Growth<br>Manual da operação</span>
+    </button>
+    <nav style="display:flex;gap:2px;margin-left:auto;flex-wrap:nowrap;overflow-x:auto;max-width:100%">
+      <sc-for list="{{ nav }}" as="n" hint-placeholder-count="7">
+        <button onClick="{{ n.go }}" style="background:none;border:0;border-bottom:3px solid {{ n.line }};padding:10px 12px 9px;font-size:13px;white-space:nowrap;flex:none;color:{{ n.fg }}">{{ n.label }}</button>
+      </sc-for>
+    </nav>
+  </div>
+</header>
+
+<main style="max-width:1360px;margin:0 auto;padding:0 36px 70px">
+<sc-if value="{{ isMapa }}" hint-placeholder-val="{{ true }}">
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;padding:40px 0 26px">
+    <div>
+      <p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#762273;font-weight:700;margin:0 0 12px">FENG / Manual de Growth</p>
+      <h1 style="font-weight:400;font-size:54px;line-height:1.02;letter-spacing:-2px;margin:0">Processos de <span style="color:#762273">Growth</span></h1>
+    </div>
+    <p style="margin:0;color:#716773;font-size:15px;max-width:520px;text-wrap:pretty">Entenda o papel de cada área, encontre o fluxo da sua demanda e consulte os detalhes para executar o trabalho. Comece por qualquer uma das três entradas abaixo.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px">
+    <div style="background:#fff;border:1px solid #e4dce5;border-radius:10px;padding:18px 20px">
+      <div style="display:grid;grid-template-columns:24px 1fr;column-gap:10px;align-items:center;margin-bottom:12px"><span style="width:24px;height:24px;border-radius:50%;background:#351937;color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center">1</span><strong style="font-weight:400;font-size:16px;white-space:nowrap">Por área</strong><span style="grid-column:2;font-size:12px;color:#716773;line-height:1.3">meu passo a passo</span></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+        <sc-for list="{{ areaChips }}" as="a" hint-placeholder-count="4">
+          <button onClick="{{ a.go }}" style="text-align:left;border:1px solid {{ a.border }};background:{{ a.bg }};color:{{ a.fg }};border-radius:6px;padding:8px 10px;font-size:13px">{{ a.short }}</button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="background:#fff;border:1px solid #e4dce5;border-radius:10px;padding:18px 20px">
+      <div style="display:grid;grid-template-columns:24px 1fr;column-gap:10px;align-items:center;margin-bottom:12px"><span style="width:24px;height:24px;border-radius:50%;background:#351937;color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center">2</span><strong style="font-weight:400;font-size:16px;white-space:nowrap">Por etapa</strong><span style="grid-column:2;font-size:12px;color:#716773;line-height:1.3">clique numa coluna do mapa</span></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+        <sc-for list="{{ phases }}" as="p" hint-placeholder-count="4">
+          <button onClick="{{ p.go }}" style="text-align:left;border:0;border-left:3px solid {{ p.c }};background:{{ p.soft }};color:{{ p.dark }};border-radius:0 6px 6px 0;padding:8px 10px;font-size:13px;line-height:1.25">{{ p.name }}<span style="display:block;font-size:10px;opacity:.8">{{ p.range }}</span></button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="background:#fff;border:1px solid #e4dce5;border-radius:10px;padding:18px 20px">
+      <div style="display:grid;grid-template-columns:24px 1fr;column-gap:10px;align-items:center;margin-bottom:12px"><span style="width:24px;height:24px;border-radius:50%;background:#351937;color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center">3</span><strong style="font-weight:400;font-size:16px;white-space:nowrap">Por pergunta</strong><span style="grid-column:2;font-size:12px;color:#716773;line-height:1.3">o que faço quando…</span></div>
+      <select value="{{ qValue }}" onChange="{{ onQ }}" aria-label="Escolha uma pergunta" style="width:100%;border:1px solid #e4dce5;background:#f7f5f7;border-radius:6px;padding:10px 12px;font-size:13px;color:#27242c">
+        <option value="">Escolha uma pergunta…</option>
+        <sc-for list="{{ questions }}" as="q"><option value="{{ q.i }}">{{ q.q }}</option></sc-for>
+      </select>
+      <p style="margin:10px 0 0;font-size:12px;color:#716773">{{ qCount }} perguntas frequentes com resposta direta e link para o detalhe.</p>
+    </div>
+  </div>
+
+  <section style="margin-top:22px;background:#fff;border:1px solid #e4dce5;border-radius:12px;padding:20px 22px 16px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:14px">
+      <h2 style="font-weight:400;font-size:22px;margin:0">Mapa da quinzena <span style="color:#716773;font-size:14px">· 16 etapas × 4 frentes</span></h2>
+      <div style="display:flex;gap:18px;font-size:12px;color:#716773;align-items:center">
+        <span style="display:flex;align-items:center;gap:6px"><span style="width:14px;height:14px;border-radius:50%;background:#762273"></span>Conduz</span>
+        <span style="display:flex;align-items:center;gap:6px"><span style="width:9px;height:9px;border-radius:50%;border:2px solid #762273;background:#fff"></span>Contribui</span>
+        <span style="display:flex;align-items:center;gap:6px"><span style="color:#fe813e">◆</span>Ponto de aprovação</span>
+      </div>
+    </div>
+    <div style="overflow-x:auto"><div style="min-width:1140px">
+    <div style="display:grid;grid-template-columns:200px repeat(16,minmax(0,1fr));gap:0 2px">
+      <span></span>
+      <sc-for list="{{ phases }}" as="p" hint-placeholder-count="4">
+        <button onClick="{{ p.go }}" style="grid-column:span {{ p.span }};border:0;background:{{ p.c }};color:#fff;text-align:left;padding:7px 10px;font-size:12px;border-radius:5px 5px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.n }} · {{ p.name }}</button>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:200px repeat(16,minmax(0,1fr));gap:0 2px">
+      <span style="align-self:end;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#716773;padding:0 0 8px 4px">Frente ↓ · Etapa →</span>
+      <sc-for list="{{ heads }}" as="h" hint-placeholder-count="16">
+        <button onClick="{{ h.go }}" title="{{ h.title }}" style="border:0;background:{{ h.bg }};padding:8px 4px 10px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:3px;min-height:86px;border-bottom:2px solid {{ h.c }}">
+          <span style="font-size:15px;color:{{ h.c }}">{{ h.n }}</span>
+          <span style="font-size:11px;line-height:1.2;color:#27242c;overflow-wrap:anywhere;hyphens:auto">{{ h.short }}</span>
+          <span style="font-size:11px;color:#fe813e">{{ h.gate }}</span>
+        </button>
+      </sc-for>
+    </div>
+    <sc-for list="{{ rows }}" as="r" hint-placeholder-count="4">
+      <div style="display:grid;grid-template-columns:200px repeat(16,minmax(0,1fr));gap:0 2px;border-bottom:1px solid #efe6f0">
+        <button onClick="{{ r.go }}" style="border:0;background:{{ r.bg }};text-align:left;padding:10px 12px;display:flex;flex-direction:column;justify-content:center;border-left:3px solid {{ r.edge }}">
+          <span style="font-size:14px;color:{{ r.fg }}">{{ r.name }}</span>
+          <span style="font-size:11px;color:#716773">conduz {{ r.leadCount }} · contribui {{ r.contribCount }}</span>
+        </button>
+        <sc-for list="{{ r.cells }}" as="c">
+          <button onClick="{{ c.go }}" title="{{ c.title }}" style="position:relative;height:58px;border:0;padding:0;background:{{ c.bg }};display:flex;align-items:center;justify-content:center">
+            <span style="position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:{{ c.c }};opacity:.28"></span>
+            <span style="position:relative;width:{{ c.size }};height:{{ c.size }};border-radius:50%;background:{{ c.fill }};border:2px solid {{ c.c }};box-shadow:{{ c.ring }}"></span>
+          </button>
+        </sc-for>
+      </div>
+    </sc-for>
+    </div></div>
+  </section>
+
+  <sc-if value="{{ isStageMode }}" hint-placeholder-val="{{ true }}">
+    <section style="margin-top:18px;background:#fff;border:1px solid #e4dce5;border-top:6px solid {{ sel.c }};border-radius:12px;overflow:hidden">
+      <div style="background:{{ sel.soft }};padding:22px 26px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:22px;align-items:center">
+        <span style="font-size:52px;letter-spacing:-2px;line-height:1;color:{{ sel.c }}">{{ sel.n }}</span>
+        <div>
+          <span style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:{{ sel.dark }}">Fase {{ sel.phN }} · {{ sel.phName }}</span>
+          <h2 style="font-weight:400;font-size:28px;line-height:1.1;margin:4px 0 6px;color:{{ sel.dark }}">{{ sel.title }}</h2>
+          <span style="font-size:13px;color:{{ sel.dark }}">Condução: {{ sel.lead }}</span>
+        </div>
+        <div style="display:flex;gap:6px">
+          <button onClick="{{ prev }}" aria-label="Etapa anterior" style="width:40px;height:40px;border-radius:50%;border:1px solid {{ sel.c }};background:#fff;color:{{ sel.c }}">←</button>
+          <button onClick="{{ next }}" aria-label="Próxima etapa" style="width:40px;height:40px;border-radius:50%;border:0;background:{{ sel.c }};color:#fff">→</button>
+        </div>
+      </div>
+      <sc-if value="{{ sel.hasGate }}"><div style="background:#fff1e6;border-bottom:1px solid #ffd9c2;padding:10px 26px;font-size:13px;color:#79320b">◆ Ponto de aprovação · {{ sel.gate }}</div></sc-if>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid #e4dce5">
+        <div style="padding:18px 26px;border-right:1px solid #e4dce5;font-size:13px"><span style="display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:{{ sel.c }};margin-bottom:6px">① O que entra</span>{{ sel.inp }}</div>
+        <div style="padding:18px 26px;border-right:1px solid #e4dce5;font-size:13px"><span style="display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:{{ sel.c }};margin-bottom:6px">② O que sai</span>{{ sel.out }}</div>
+        <div style="padding:18px 26px;font-size:13px"><span style="display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:{{ sel.c }};margin-bottom:6px">③ Condição para avançar</span>{{ sel.cond }}</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr))">
+        <sc-for list="{{ sel.roles }}" as="r">
+          <div style="padding:20px 22px;background:{{ r.bg }};border-right:1px solid #efe6f0">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px">
+              <button onClick="{{ r.goArea }}" style="background:none;border:0;padding:0;font-size:12px;color:{{ r.labelFg }};text-align:left">{{ r.name }}</button>
+              <span style="font-size:10px;letter-spacing:.6px;text-transform:uppercase;border-radius:20px;padding:2px 8px;background:{{ r.badgeBg }};color:{{ r.badgeFg }}">{{ r.badge }}</span>
+            </div>
+            <strong style="display:block;font-weight:400;font-size:16px;line-height:1.25;margin-bottom:8px;color:{{ r.titleFg }}">{{ r.short }}</strong>
+            <p style="margin:0;font-size:13px;color:#4a434d;text-wrap:pretty">{{ r.detail }}</p>
+          </div>
+        </sc-for>
+      </div>
+      <div style="padding:14px 26px;background:#f7f5f7;font-size:12px;color:#716773;border-top:1px solid #e4dce5"><strong style="font-weight:400;color:#27242c">Onde registrar:</strong> {{ sel.reg }}</div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ isAreaMode }}" hint-placeholder-val="{{ false }}">
+    <section style="margin-top:18px;display:grid;grid-template-columns:340px minmax(0,1fr);gap:18px;align-items:start">
+      <div style="background:#351937;color:#fff;border-radius:12px;padding:24px;position:sticky;top:90px">
+        <span style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#ffb88e">{{ cur.group }} · {{ cur.owner }}</span>
+        <h2 style="font-weight:400;font-size:26px;line-height:1.1;margin:8px 0 4px">{{ cur.name }}</h2>
+        <p style="margin:0 0 14px;color:#ffb88e">{{ cur.verb }}</p>
+        <ul style="margin:0;padding-left:18px;font-size:13px;color:#ece0ed;display:flex;flex-direction:column;gap:5px">
+          <sc-for list="{{ cur.does }}" as="d"><li>{{ d }}</li></sc-for>
+        </ul>
+        <sc-if value="{{ cur.hasNote }}"><p style="margin:0;font-size:13px;color:#ece0ed">{{ cur.note }}</p></sc-if>
+        <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ cur.handoffs }}" as="h">
+            <div style="background:rgba(255,255,255,.08);border-left:3px solid #fe813e;padding:10px 12px;font-size:12px"><strong style="display:block;font-weight:400;color:#ffb88e">{{ h.to }}</strong>{{ h.what }}</div>
+          </sc-for>
+        </div>
+        <label style="display:flex;align-items:center;gap:10px;font-size:13px;margin-top:18px;padding-top:16px;border-top:1px solid #644568;cursor:pointer">
+          <input type="checkbox" checked="{{ onlyLead }}" onChange="{{ toggleOnlyLead }}" style="accent-color:#fe813e;width:16px;height:16px">Só as etapas que conduzo
+        </label>
+      </div>
+      <div style="background:#fff;border:1px solid #e4dce5;border-radius:12px;padding:6px 26px">
+        <sc-for list="{{ cur.steps }}" as="s">
+          <div style="display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid #efe6f0">
+            <button onClick="{{ s.go }}" style="width:46px;height:46px;border-radius:50%;border:2px solid {{ s.c }};background:{{ s.fill }};color:{{ s.numFg }};font-size:15px">{{ s.n }}</button>
+            <div>
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+                <span style="font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:{{ s.c }}">{{ s.phName }}</span>
+                <span style="font-size:10px;letter-spacing:.6px;text-transform:uppercase;border-radius:20px;padding:2px 8px;background:{{ s.badgeBg }};color:{{ s.badgeFg }}">{{ s.badge }}</span>
+                <sc-if value="{{ s.hasGate }}"><span style="font-size:11px;color:#a74b15">◆ {{ s.gate }}</span></sc-if>
+              </div>
+              <strong style="display:block;font-weight:400;font-size:18px;margin:4px 0 4px">{{ s.title }}</strong>
+              <p style="margin:0;font-size:13px;color:#4a434d;max-width:820px;text-wrap:pretty">{{ s.detail }}</p>
+              <sc-if value="{{ s.isLead }}">
+                <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px;font-size:12px">
+                  <div style="background:{{ s.soft }};padding:10px 12px;border-radius:6px"><span style="display:block;color:{{ s.c }};font-size:10px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:3px">Você recebe</span>{{ s.inp }}</div>
+                  <div style="background:{{ s.soft }};padding:10px 12px;border-radius:6px"><span style="display:block;color:{{ s.c }};font-size:10px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:3px">Você entrega</span>{{ s.out }}</div>
+                  <div style="background:{{ s.soft }};padding:10px 12px;border-radius:6px"><span style="display:block;color:{{ s.c }};font-size:10px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:3px">Onde registrar</span>{{ s.reg }}</div>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ isQMode }}" hint-placeholder-val="{{ false }}">
+    <section style="margin-top:18px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px;align-items:start">
+      <div style="background:#351937;color:#fff;border-radius:12px;padding:30px 32px">
+        <span style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#ffb88e">Pergunta</span>
+        <h2 style="font-weight:400;font-size:30px;line-height:1.15;margin:8px 0 18px">{{ curQ.q }}</h2>
+        <p style="margin:0;font-size:17px;color:#ece0ed;line-height:1.5;text-wrap:pretty">{{ curQ.a }}</p>
+        <button onClick="{{ curQ.go }}" style="margin-top:24px;background:#fe813e;color:#351937;border:0;border-radius:6px;padding:11px 16px;font-size:14px">{{ curQ.cta }} →</button>
+      </div>
+      <div style="background:#fff;border:1px solid #e4dce5;border-radius:12px;padding:8px 22px">
+        <sc-for list="{{ questions }}" as="q">
+          <button onClick="{{ q.go }}" style="display:flex;justify-content:space-between;gap:12px;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid #efe6f0;padding:11px 0;font-size:13px;color:{{ q.fg }}"><span>{{ q.q }}</span><span>→</span></button>
+        </sc-for>
+      </div>
+    </section>
+  </sc-if>
+
+  <section style="margin-top:28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:28px;border-top:1px solid #e4dce5;padding-top:26px">
+    <div>
+      <h2 style="font-weight:400;font-size:22px;margin:0 0 8px">Regras que valem em todo o percurso</h2>
+      <p style="margin:0;font-size:13px;color:#716773">O Planner é dono do projeto e da estratégia; CRM e Mídia Paga desenham as soluções de seus canais; Comunicação transforma os desdobramentos em textos e peças.</p>
+    </div>
+    <ol style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 28px">
+      <sc-for list="{{ rules }}" as="r" hint-placeholder-count="9">
+        <li style="display:grid;grid-template-columns:26px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid #efe6f0;font-size:13px"><span style="color:#fe813e">{{ r.n }}</span><span>{{ r.t }}</span></li>
+      </sc-for>
+    </ol>
+  </section>
+</sc-if>
+
+<sc-if value="{{ isRef }}" hint-placeholder-val="{{ false }}">
+  <div style="padding-top:34px">
+    <dc-import name="Manual Referencia" secao="{{ page }}" hint-size="100%,900px"></dc-import>
+  </div>
+</sc-if>
+</main>
+<footer style="max-width:1360px;margin:0 auto;padding:20px 36px 30px;border-top:1px solid #e4dce5;display:flex;justify-content:space-between;font-size:11px;color:#716773"><span>FENG BRASIL · Proprietary &amp; Confidential</span><span>Manual de Growth · 14.10.2026</span></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;entrada&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;etapa&quot;,&quot;area&quot;],&quot;default&quot;:&quot;etapa&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { page: 'mapa', mode: 'stage', stage: 0, area: 'pl', q: 0, onlyLead: false, tick: 0 };
+  componentDidMount() {
+    if (this.props.entrada === 'area') this.setState({ mode: 'area' });
+    if (!window.FENG) this._t = setInterval(() => { if (window.FENG) { clearInterval(this._t); this.forceUpdate(); } }, 60);
+  }
+  componentWillUnmount() { clearInterval(this._t); }
+  renderVals() {
+    const F = window.FENG || { areas: [], phases: [], stages: [], questions: [], rules: [] };
+    const st = this.state, set = o => { this.setState(o); window.scrollTo({ top: o.page && o.page !== 'mapa' ? 0 : window.scrollY }); };
+    const goStage = i => this.setState({ page: 'mapa', mode: 'stage', stage: i });
+    const goArea = k => this.setState({ page: 'mapa', mode: 'area', area: k });
+    const idxOf = n => F.stages.findIndex(s => s.n === n);
+    const navDef = [['mapa','Mapa da quinzena'],['estrutura','Quem faz o quê'],['canais','Fluxos de canal'],['rotina','Rotina e ritos'],['consulta','Consulta'],['piloto','Piloto Fluminense']];
+    const nav = navDef.map(([k, label]) => ({ label, go: () => set({ page: k }), fg: st.page === k ? '#762273' : '#27242c', line: st.page === k ? '#762273' : 'transparent' }));
+    const phases = F.phases.map((p, i) => ({ ...p, span: F.stages.filter(s => s.ph === i).length, go: () => goStage(F.stages.findIndex(s => s.ph === i)) }));
+    const sm = st.mode === 'stage', am = st.mode === 'area';
+    const heads = F.stages.map((s, i) => { const p = F.phases[s.ph]; const on = sm && i === st.stage; return { n: s.n, short: s.short, title: s.title, gate: s.gate ? '◆' : '', c: p.c, bg: on ? p.soft : '#fff', go: () => goStage(i) }; });
+    const rows = F.areas.map(a => {
+      const rowOn = am && st.area === a.k;
+      const lc = F.stages.filter(s => s.L.includes(a.k)).length;
+      return { name: a.name, leadCount: lc, contribCount: F.stages.length - lc, go: () => goArea(a.k), bg: rowOn ? '#351937' : '#fff', fg: rowOn ? '#fff' : '#27242c', edge: rowOn ? '#fe813e' : 'transparent',
+        cells: F.stages.map((s, i) => { const p = F.phases[s.ph]; const lead = s.L.includes(a.k); const colOn = sm && i === st.stage;
+          return { c: p.c, size: lead ? '22px' : '11px', fill: lead ? p.c : '#fff', ring: (colOn && lead) ? '0 0 0 4px ' + p.soft + ', 0 0 0 6px ' + p.c : 'none',
+            bg: colOn ? p.soft : rowOn ? (lead ? p.soft : '#faf7fa') : '#fff', title: s.n + ' · ' + a.short + ': ' + s.r[a.k][0], go: () => goStage(i) }; }) };
+    });
+    const s = F.stages[st.stage] || { r: {}, L: [] }; const sp = F.phases[s.ph] || {};
+    const sel = { ...s, c: sp.c, soft: sp.soft, dark: sp.dark, phN: sp.n, phName: sp.name, hasGate: !!s.gate,
+      roles: F.areas.map(a => { const lead = s.L.includes(a.k); const r = s.r[a.k] || ['', ''];
+        return { name: a.name, short: r[0], detail: r[1], goArea: () => goArea(a.k), bg: lead ? sp.soft : '#fff', labelFg: lead ? sp.dark : '#716773', titleFg: lead ? sp.dark : '#27242c', badge: lead ? 'Conduz' : 'Contribui', badgeBg: lead ? sp.c : '#efe6f0', badgeFg: lead ? '#fff' : '#716773' }; }) };
+    const a = F.areas.find(x => x.k === st.area) || { does: [], handoffs: [] };
+    const cur = { ...a, hasNote: !!a.note, steps: F.stages.map((x, i) => ({ x, i })).filter(({ x }) => !st.onlyLead || x.L.includes(a.k)).map(({ x, i }) => { const p = F.phases[x.ph]; const lead = x.L.includes(a.k);
+      return { n: x.n, title: x.title, detail: (x.r[a.k] || [])[1], phName: p.name, c: p.c, soft: p.soft, fill: lead ? p.c : '#fff', numFg: lead ? '#fff' : p.c, isLead: lead, badge: lead ? 'Você conduz' : 'Você contribui', badgeBg: lead ? '#351937' : '#efe6f0', badgeFg: lead ? '#fff' : '#716773', hasGate: !!x.gate, gate: x.gate, inp: x.inp, out: x.out, reg: x.reg, go: () => goStage(i) }; }) };
+    const qGo = q => q.stage ? () => goStage(idxOf(q.stage)) : () => set({ page: q.page });
+    const pageNames = { canais: 'Fluxos de canal', consulta: 'Consulta operacional', rotina: 'Rotina e ritos' };
+    const questions = F.questions.map((q, i) => ({ ...q, i, go: () => this.setState({ mode: 'question', q: i }), fg: st.mode === 'question' && st.q === i ? '#762273' : '#27242c' }));
+    const cq = F.questions[st.q] || {};
+    return {
+      nav, phases, heads, rows, sel, cur, questions, page: st.page,
+      isMapa: st.page === 'mapa', isRef: st.page !== 'mapa',
+      isStageMode: sm, isAreaMode: am, isQMode: st.mode === 'question',
+      areaChips: F.areas.map(x => { const on = am && st.area === x.k; return { short: x.short, go: () => goArea(x.k), bg: on ? '#351937' : '#fff', fg: on ? '#fff' : '#27242c', border: on ? '#351937' : '#e4dce5' }; }),
+      qValue: st.mode === 'question' ? String(st.q) : '', qCount: F.questions.length,
+      onQ: e => { if (e.target.value !== '') this.setState({ mode: 'question', q: +e.target.value }); },
+      curQ: { ...cq, go: qGo(cq), cta: cq.stage ? 'Ver etapa ' + cq.stage : 'Abrir ' + (pageNames[cq.page] || '') },
+      prev: () => goStage(Math.max(0, st.stage - 1)), next: () => goStage(Math.min(F.stages.length - 1, st.stage + 1)),
+      onlyLead: st.onlyLead, toggleOnlyLead: () => this.setState({ onlyLead: !st.onlyLead }),
+      rules: F.rules.map((t, i) => ({ t, n: String(i + 1).padStart(2, '0') })),
+      goMapa: () => set({ page: 'mapa' })
+    };
+  }
+}
+</script>
+</body>
+</html>

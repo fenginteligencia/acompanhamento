@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="font-family:'DM Sans',Arial,sans-serif;color:#27242c">
+
+<sc-if value="{{ s.estrutura }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:8px 0 22px"><p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#762273;font-weight:700;margin:0 0 10px">Estrutura</p><h1 style="font-weight:400;font-size:40px;letter-spacing:-1.2px;line-height:1.08;margin:0">Quem faz o quê</h1><p style="color:#716773;font-size:14px;margin:8px 0 0">Três frentes, com passagens explícitas entre elas.</p></div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr) 34px minmax(0,1fr);align-items:stretch">
+    <article style="background:#fff;border:1px solid #e4dce5;border-top:5px solid #762273;border-radius:8px;display:flex;flex-direction:column">
+      <div style="padding:20px 20px 0"><span style="font-size:11px;color:#716773">Gestão · Larissa Menezes</span><h3 style="font-weight:400;font-size:21px;line-height:1.15;margin:6px 0 4px">Planejamento + Inteligência</h3><p style="color:#762273;margin:0 0 10px;font-size:14px">Direciona e mede</p>
+      <ul style="padding-left:18px;margin:0 0 16px;font-size:13px;display:flex;flex-direction:column;gap:5px"><li>Planejamento estratégico e plano de ação</li><li>KPIs, pesquisas e análise de resultados</li><li>Planejamento quinzenal e direcionamento das demandas</li></ul></div>
+      <div style="margin-top:auto;background:#f2e7f2;padding:14px 20px;font-size:12px;border-radius:0 0 8px 8px"><strong style="display:block;font-weight:400;color:#4c174b">Para Comunicação e Canais</strong>Contexto + objetivo + públicos + bases + datas</div>
+    </article>
+    <div style="display:flex;align-items:center;justify-content:center;color:#fe813e;font-size:22px">→</div>
+    <article style="background:#fff;border:1px solid #e4dce5;border-top:5px solid #23617d;border-radius:8px;display:flex;flex-direction:column">
+      <div style="padding:20px 20px 0"><span style="font-size:11px;color:#716773">Bárbara Guedes</span><h3 style="font-weight:400;font-size:21px;line-height:1.15;margin:6px 0 4px">Comunicação Criativa</h3><p style="color:#23617d;margin:0 0 10px;font-size:14px">Desdobra e produz</p>
+      <ul style="padding-left:18px;margin:0 0 16px;font-size:13px;display:flex;flex-direction:column;gap:5px"><li>Calendário de peças e formatos</li><li>Issues de Redação, Design, CRM e Mídia Paga</li><li>Textos, conceitos, peças e motion</li><li>Aprovação operacional com o clube</li><li>Publicações e aprovação dos testes/prévias de CRM e Mídia Paga</li></ul></div>
+      <div style="margin-top:auto;background:#e7f1f6;padding:14px 20px;font-size:12px;border-radius:0 0 8px 8px"><strong style="display:block;font-weight:400;color:#18465c">Para Canais</strong>Peças e textos aprovados + issues de CRM e Mídia Paga</div>
+    </article>
+    <div style="display:flex;align-items:center;justify-content:center;color:#fe813e;font-size:22px">⇄</div>
+    <article style="background:#fff;border:1px solid #e4dce5;border-top:5px solid #28705a;border-radius:8px;display:flex;flex-direction:column">
+      <div style="padding:20px 20px 0"><span style="font-size:11px;color:#716773">Liderança em aberto</span><h3 style="font-weight:400;font-size:21px;line-height:1.15;margin:6px 0 4px">Canais</h3><p style="color:#28705a;margin:0 0 10px;font-size:14px">Planeja os canais e executa</p>
+      <ul style="padding-left:18px;margin:0 0 16px;font-size:13px;display:flex;flex-direction:column;gap:5px"><li>CRM e mídia paga</li><li>Especialista desenvolve a estratégia de Mídia Paga a partir da estratégia do projeto</li><li>Funil de aquisição e desdobramento de peças para Comunicação</li><li>Preparação de disparos e campanhas com os públicos indicados</li><li>Testes de CRM e prévias de Mídia Paga para aprovação da Redação</li><li>Disparos e ativação de campanhas após aprovação</li><li>Alinhamento e ajuste de investimento</li></ul></div>
+      <div style="margin-top:auto;background:#e8f3ec;padding:14px 20px;font-size:12px;border-radius:0 0 8px 8px;display:flex;flex-direction:column;gap:8px"><div><strong style="display:block;font-weight:400;color:#1b5140">Para Comunicação</strong>Plano de mídia + funil de aquisição + demandas de peças</div><div><strong style="display:block;font-weight:400;color:#1b5140">Para execução</strong>Teste/prévia aprovado antes do disparo ou ativação</div></div>
+    </article>
+  </div>
+  <div style="margin-top:16px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;background:#fff;border:1px solid #e4dce5;border-radius:8px;padding:14px 20px;font-size:13px">
+    <span><strong style="font-weight:400;color:#762273">Liderança:</strong> André Monnerat · CEO → Mike · Diretor Digital → Rhaysa · Head de Growth</span>
+    <span style="color:#716773">O Planner acompanha a estratégia e o andamento do projeto diariamente.</span>
+  </div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:16px">
+    <div style="background:#351937;color:#fff;border-radius:9px;padding:26px 28px">
+      <span style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#ffb88e">Dentro de Planejamento + Inteligência</span>
+      <h3 style="font-weight:400;font-size:26px;margin:6px 0 14px">Planner do projeto</h3>
+      <ol style="margin:0;padding-left:22px;font-size:13px;color:#ece0ed;display:flex;flex-direction:column;gap:7px"><li>Ser o dono do projeto e da estratégia.</li><li>Entender o contexto do clube, do projeto, do negócio e da FENG.</li><li>Acompanhar o momento financeiro, o histórico e as comparações com anos anteriores.</li><li>Ao receber informações do cliente, alinhar previamente com o gestor como transmiti-las e direcionar o time dedicado ao clube.</li><li>Traduzir o contexto em objetivos, públicos, prioridades e plano de ação.</li><li>Envolver Mídia Paga na estratégia do projeto e definir o papel do canal para alcançar os resultados.</li><li>Preparar o briefing estratégico e abrir o épico da quinzena.</li><li>Revisar a aderência estratégica das peças, textos e soluções propostas pelas áreas.</li><li>Acompanhar o andamento das entregas, os KPIs e os resultados do projeto.</li></ol>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ s.canais }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:8px 0 22px"><p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#762273;font-weight:700;margin:0 0 10px">Fluxos de canal</p><h1 style="font-weight:400;font-size:40px;letter-spacing:-1.2px;line-height:1.08;margin:0">Como nasce uma jornada e um plano de mídia</h1><p style="color:#716773;font-size:14px;margin:8px 0 0;max-width:720px">Os fluxos de canal desenham a solução. Depois, o material segue as etapas de produção, revisão, aprovação e execução da quinzena.</p></div>
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <article style="background:#fff;border:1px solid #e4dce5;border-radius:9px;padding:24px 26px">
+      <span style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#716773">Fluxo de canal / CRM · Criação de jornada</span>
+      <h3 style="font-weight:400;font-size:22px;margin:6px 0 4px">Jornada de CRM · convidados do Fluminense</h3>
+      <p style="font-size:13px;color:#716773;margin:0 0 18px">Do direcionamento estratégico à produção, com aprovação do desenho pelo clube.</p>
+      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px">
+        <div style="background:#f2e7f2;padding:16px;border-radius:8px 0 0 8px;font-size:13px"><span style="font-size:10px;letter-spacing:.8px;color:#4c174b">01 · PLANEJAMENTO</span><strong style="display:block;font-weight:400;font-size:16px;color:#4c174b;margin:6px 0">Direcionar a necessidade</strong>O Planner entrega objetivo, público/base, contexto e necessidades da jornada.</div>
+        <div style="background:#e8f3ec;padding:16px;font-size:13px"><span style="font-size:10px;letter-spacing:.8px;color:#1b5140">02 · CRM</span><strong style="display:block;font-weight:400;font-size:16px;color:#1b5140;margin:6px 0">Desenhar o fluxo</strong>CRM propõe quantidade e função das etapas, sequência e lógica de funcionamento, alinhadas à estratégia.</div>
+        <div style="background:#fff1e6;padding:16px;font-size:13px;border:2px solid #fe813e"><span style="font-size:10px;letter-spacing:.8px;color:#79320b">03 · CLUBE ◆</span><strong style="display:block;font-weight:400;font-size:16px;color:#79320b;margin:6px 0">Aprovar a jornada</strong>O desenho do fluxo é apresentado ao clube para aprovação antes da produção.</div>
+        <div style="background:#e7f1f6;padding:16px;border-radius:0 8px 8px 0;font-size:13px"><span style="font-size:10px;letter-spacing:.8px;color:#18465c">04 · COMUNICAÇÃO CRIATIVA</span><strong style="display:block;font-weight:400;font-size:16px;color:#18465c;margin:6px 0">Produzir as mensagens e peças</strong>Com o fluxo aprovado pelo clube, Redação e Design produzem os materiais de cada etapa.</div>
+      </div>
+      <p style="font-size:13px;margin:16px 0 0"><strong style="font-weight:400;color:#a74b15">Condição para iniciar a produção:</strong> fluxo da jornada aprovado pelo clube.</p>
+      <p style="font-size:12px;color:#716773;margin:6px 0 0">Após a produção, seguem as revisões e aprovações de conteúdo, a configuração, os testes e a execução previstos no fluxo geral. A aprovação do desenho da jornada precede a produção dos materiais.</p>
+    </article>
+    <article style="background:#fff;border:1px solid #e4dce5;border-radius:9px;padding:24px 26px">
+      <span style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#716773">Fluxo de canal / Mídia Paga · Planejamento de mídia</span>
+      <h3 style="font-weight:400;font-size:22px;margin:6px 0 4px">Planejamento de Mídia Paga</h3>
+      <p style="font-size:13px;color:#716773;margin:0 0 18px">Estratégia do projeto, planejamento do especialista e desdobramento para Comunicação e Design.</p>
+      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px">
+        <div style="background:#f2e7f2;padding:16px;border-radius:8px 0 0 8px;font-size:13px"><span style="font-size:10px;letter-spacing:.8px;color:#4c174b">01 · PLANNER + MÍDIA PAGA</span><strong style="display:block;font-weight:400;font-size:16px;color:#4c174b;margin:6px 0">Definir o papel do canal</strong>O Planner entende e define a estratégia do projeto, com Mídia Paga envolvida, e inclui o canal entre as frentes para alcançar os resultados.</div>
+        <div style="background:#e8f3ec;padding:16px;font-size:13px"><span style="font-size:10px;letter-spacing:.8px;color:#1b5140">02 · ESPECIALISTA DE MÍDIA PAGA</span><strong style="display:block;font-weight:400;font-size:16px;color:#1b5140;margin:6px 0">Desenvolver o plano de mídia</strong>O especialista constrói o planejamento estratégico de Mídia Paga, considerando o funil de aquisição, e desdobra as peças necessárias para Comunicação.</div>
+        <div style="background:#e7f1f6;padding:16px;font-size:13px"><span style="font-size:10px;letter-spacing:.8px;color:#18465c">03 · COMUNICAÇÃO / REDAÇÃO</span><strong style="display:block;font-weight:400;font-size:16px;color:#18465c;margin:6px 0">Produzir os textos</strong>Comunicação recebe o plano de mídia e as demandas de peças, desenvolve os textos e encaminha o briefing e os textos para os designers.</div>
+        <div style="background:#e7f1f6;padding:16px;border-radius:0 8px 8px 0;font-size:13px"><span style="font-size:10px;letter-spacing:.8px;color:#18465c">04 · DESIGN / MOTION</span><strong style="display:block;font-weight:400;font-size:16px;color:#18465c;margin:6px 0">Produzir as peças</strong>Design desenvolve as peças a partir do briefing e dos textos, seguindo o desdobramento definido no planejamento de mídia.</div>
+      </div>
+      <p style="font-size:13px;margin:16px 0 0"><strong style="font-weight:400;color:#762273">Responsabilidades:</strong> Planner é dono da estratégia do projeto; o especialista de Mídia Paga é responsável pela estratégia do canal.</p>
+      <p style="font-size:12px;color:#716773;margin:6px 0 0">Após a produção, o material segue para as revisões e aprovações do fluxo geral antes da ativação por Mídia Paga.</p>
+    </article>
+  </div>
+</sc-if>
+
+<sc-if value="{{ s.rotina }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:8px 0 22px"><p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#762273;font-weight:700;margin:0 0 10px">Rotina</p><h1 style="font-weight:400;font-size:40px;letter-spacing:-1.2px;line-height:1.08;margin:0">Ritos e ciclos</h1><p style="color:#716773;font-size:14px;margin:8px 0 0">Encontros de alinhamento da operação e como os materiais se desdobram.</p></div>
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px">
+    <article style="background:#fff;border:1px solid #e4dce5;border-radius:9px;padding:22px;display:flex;flex-direction:column;gap:10px"><span style="align-self:flex-start;background:#762273;color:#fff;border-radius:20px;padding:3px 11px;font-size:11px">Diário · 15–30 min</span><h3 style="font-weight:400;font-size:21px;margin:0">Daily interna</h3><p style="margin:0;font-size:13px">Alinhar as demandas do dia e da semana.</p><p style="margin:auto 0 0;font-size:12px;color:#716773;border-top:1px solid #e4dce5;padding-top:10px">Planejamento, Comunicação, Criação, CRM e Mídia</p></article>
+    <article style="background:#fff;border:1px solid #e4dce5;border-radius:9px;padding:22px;display:flex;flex-direction:column;gap:10px"><span style="align-self:flex-start;background:#762273;color:#fff;border-radius:20px;padding:3px 11px;font-size:11px">Diário · 15–30 min</span><h3 style="font-weight:400;font-size:21px;margin:0">Daily Squad</h3><p style="margin:0;font-size:13px">Planner representa Growth no squad.</p><p style="margin:auto 0 0;font-size:12px;color:#716773;border-top:1px solid #e4dce5;padding-top:10px">CS/GP, Apoio e Planner</p></article>
+    <article style="background:#351937;color:#fff;border-radius:9px;padding:22px;display:flex;flex-direction:column;gap:10px"><span style="align-self:flex-start;background:#fe813e;color:#351937;border-radius:20px;padding:3px 11px;font-size:11px">Semanal · 30 min–1h</span><h3 style="font-weight:400;font-size:21px;margin:0">Weekly por projeto</h3><p style="margin:0;font-size:13px;color:#ece0ed">Resultados, entregas, prioridades, impedimentos e próximos passos.</p><p style="margin:0;font-size:12px;color:#ffb88e">Substitui o Radar. Insumo: relatórios internos das áreas.</p><p style="margin:auto 0 0;font-size:12px;color:#ece0ed;border-top:1px solid #644568;padding-top:10px">Gerentes, Head, Planner do projeto, redator do projeto, designer do projeto, Mídia e CRM.<br><span style="color:#ffb88e">Participação pontual a considerar:</span> coordenadores de Design, Comunicação e CRM, conforme a pauta.</p></article>
+  </div>
+  <p style="font-size:12px;color:#716773;margin:12px 0 0">Duração definida: 15–30 minutos. Horários das dailies ainda não registrados.</p>
+  <h2 style="font-weight:400;font-size:24px;margin:40px 0 4px">Como os materiais se desdobram</h2>
+  <p style="font-size:13px;color:#716773;margin:0 0 16px">Os ciclos organizam a produção e o desdobramento dos materiais. Os encontros do time estão nos ritos acima.</p>
+  <div style="display:flex;flex-direction:column;gap:6px">
+    <div style="display:grid;grid-template-columns:140px 180px 1fr;gap:16px;align-items:center;background:#762273;color:#fff;border-radius:7px;padding:16px 20px"><span style="font-size:12px;letter-spacing:1px;text-transform:uppercase">Trimestral</span><strong style="font-weight:400;font-size:19px">Estratégico</strong><span style="font-size:13px;color:#ece0ed">Materiais de direcionamento estratégico do ciclo.</span></div>
+    <div style="display:grid;grid-template-columns:140px 180px 1fr;gap:16px;align-items:center;background:#f2e7f2;color:#4c174b;border-radius:7px;padding:16px 20px;margin-left:40px"><span style="font-size:12px;letter-spacing:1px;text-transform:uppercase">Mensal</span><strong style="font-weight:400;font-size:19px">Tático</strong><span style="font-size:13px">Materiais de desdobramento e acompanhamento tático.</span></div>
+    <div style="display:grid;grid-template-columns:140px 180px 1fr;gap:16px;align-items:center;background:#fff;border:1px solid #e4dce5;color:#27242c;border-radius:7px;padding:16px 20px;margin-left:80px"><span style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#716773">Semanal</span><strong style="font-weight:400;font-size:19px">Operacional</strong><span style="font-size:13px;color:#716773">Materiais de desdobramento e acompanhamento operacional.</span></div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ s.consulta }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:8px 0 22px"><p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#762273;font-weight:700;margin:0 0 10px">Consulta operacional</p><h1 style="font-weight:400;font-size:40px;letter-spacing:-1.2px;line-height:1.08;margin:0">Regras do dia a dia</h1><p style="color:#716773;font-size:14px;margin:8px 0 0">Status do Jira, prioridades, comunicação e preparação dos plantões.</p></div>
+  <div style="background:#fff;border:1px solid #e4dce5;border-radius:9px;padding:24px 26px">
+    <h3 style="font-weight:400;font-size:20px;margin:0 0 16px">Jira · status</h3>
+    <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;font-size:12px">
+      <div style="background:#f7f5f7;border-top:3px solid #716773;padding:12px;border-radius:4px"><strong style="display:block;font-weight:400;font-size:14px;margin-bottom:4px">Backlog</strong>Briefing incompleto.</div>
+      <div style="background:#f2e7f2;border-top:3px solid #762273;padding:12px;border-radius:4px"><strong style="display:block;font-weight:400;font-size:14px;margin-bottom:4px">Pendente</strong>Briefing completo, aguardando atuação.</div>
+      <div style="background:#e7f1f6;border-top:3px solid #23617d;padding:12px;border-radius:4px"><strong style="display:block;font-weight:400;font-size:14px;margin-bottom:4px">Em progresso</strong>Trabalho em execução.</div>
+      <div style="background:#fff1e6;border-top:3px solid #fe813e;padding:12px;border-radius:4px"><strong style="display:block;font-weight:400;font-size:14px;margin-bottom:4px">Blocked</strong>Falta de informações externas.</div>
+      <div style="background:#fff0e4;border-top:3px solid #a74b15;padding:12px;border-radius:4px"><strong style="display:block;font-weight:400;font-size:14px;margin-bottom:4px">Em validação</strong>Aprovação interna ou externa.</div>
+      <div style="background:#e8f3ec;border-top:3px solid #28705a;padding:12px;border-radius:4px"><strong style="display:block;font-weight:400;font-size:14px;margin-bottom:4px">Concluída</strong>Aprovação final da etapa do board.</div>
+    </div>
+    <h3 style="font-weight:400;font-size:20px;margin:26px 0 12px">Jira · prioridades</h3>
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;font-size:13px">
+      <div style="background:#351937;color:#fff;padding:12px 14px;border-radius:4px"><strong style="font-weight:400">Urgente</strong> · mesmo dia</div>
+      <div style="background:#762273;color:#fff;padding:12px 14px;border-radius:4px"><strong style="font-weight:400">Alta</strong> · falta 1 dia</div>
+      <div style="background:#efe6f0;color:#351937;padding:12px 14px;border-radius:4px"><strong style="font-weight:400">Normal</strong> · 2–3 dias</div>
+      <div style="background:#f7f5f7;color:#351937;padding:12px 14px;border-radius:4px;border:1px solid #e4dce5"><strong style="font-weight:400">Baixa</strong> · mais de 3 dias</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+    <div style="background:#fff;border:1px solid #e4dce5;border-radius:9px;padding:24px 26px">
+      <h3 style="font-weight:400;font-size:20px;margin:0 0 14px">Comunicação · onde cada coisa acontece</h3>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:13px">
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:12px"><strong style="font-weight:400;color:#762273">Discord</strong><span>Comunicação diária, salas, tópicos e marcações.</span></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:12px"><strong style="font-weight:400;color:#762273">Jira</strong><span>Demandas, peças, ajustes e aprovações.</span></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:12px"><strong style="font-weight:400;color:#a74b15">WhatsApp</strong><span>Minimizar conversas paralelas em WhatsApp.</span></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:12px"><strong style="font-weight:400;color:#762273">Testes</strong><span>Testes de CRM e prévias de Mídia Paga: aprovação dos redatores antes da execução.</span></div>
+      </div>
+    </div>
+    <div style="background:#fff;border:1px solid #e4dce5;border-radius:9px;padding:24px 26px">
+      <h3 style="font-weight:400;font-size:20px;margin:0 0 14px">Plantões · preparação e cobertura</h3>
+      <ol style="margin:0;padding-left:20px;font-size:13px;display:flex;flex-direction:column;gap:8px"><li>Planilha de jogos: cerca de 10 dias antes do fim do mês.</li><li>Até 5 dias para preencher a escala e tratar lacunas.</li><li>Peças pré-prontas e validadas com os clubes.</li><li>Definir os canais de pós-jogo para dimensionar a equipe.</li><li>Compensação de horas alinhada aos coordenadores e gestores.</li></ol>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ s.piloto }}" hint-placeholder-val="{{ false }}">
+  <div style="background:#351937;color:#fff;border-radius:10px;padding:30px 32px;display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:flex-start">
+    <div style="max-width:720px"><p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#ffb88e;margin:0 0 10px">Implementação do novo modelo</p><h1 style="font-weight:400;font-size:38px;letter-spacing:-1.2px;line-height:1.08;margin:0 0 12px">Fluminense · projeto piloto</h1><p style="margin:0;font-size:14px;color:#ece0ed">Implantar uma nova forma de trabalho no projeto: fluxos entre áreas, materiais, responsabilidades e ritos. O piloto acompanha a adoção do modelo pelo time ao longo da rotina do clube.</p></div>
+    <span style="border:1px solid #ffb88e;color:#ffb88e;border-radius:20px;padding:5px 12px;font-size:12px">Plano proposto de implantação</span>
+  </div>
+  <p style="font-size:14px;color:#716773;margin:20px 0 6px">Alinhar → preparar → colocar em prática → ajustar → consolidar.</p>
+  <p style="font-size:13px;color:#716773;margin:0 0 18px">Etapas sequenciais, com avanço conforme a preparação do time. Datas e responsáveis nominais serão definidos no alinhamento inicial.</p>
+  <div style="display:flex;flex-direction:column;border-left:3px solid #762273;margin-left:14px">
+    <sc-for list="{{ pilotSteps }}" as="p" hint-placeholder-count="6">
+      <div style="position:relative;padding:0 0 22px 34px">
+        <span style="position:absolute;left:-16px;top:0;width:29px;height:29px;border-radius:50%;background:#762273;color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center">{{ p.n }}</span>
+        <div style="background:#fff;border:1px solid #e4dce5;border-radius:8px;padding:18px 22px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr);gap:22px">
+          <div><span style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#762273">Etapa {{ p.n }} · {{ p.tag }}</span><h4 style="font-weight:400;font-size:17px;margin:4px 0 6px">{{ p.title }}</h4><p style="margin:0;font-size:13px;color:#4a434d">{{ p.text }}</p></div>
+          <div style="font-size:12px"><span style="display:block;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:#716773;margin-bottom:4px">Responsável proposto</span>{{ p.who }}</div>
+          <div style="font-size:12px;background:#f7f5f7;padding:10px 12px;border-radius:5px"><span style="display:block;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:#716773;margin-bottom:4px">Entrega / condição</span>{{ p.out }}</div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:10px">
+    <article style="background:#fff;border:1px solid #e4dce5;border-radius:8px;padding:20px;font-size:13px"><h3 style="font-weight:400;font-size:17px;margin:0 0 10px;color:#762273">Materiais a preparar</h3><ul style="margin:0;padding-left:16px;display:flex;flex-direction:column;gap:6px"><li><strong style="font-weight:400;color:#351937">Direcionamento do projeto:</strong> contexto, histórico, objetivos, indicadores, prioridades e papel dos canais.</li><li><strong style="font-weight:400;color:#351937">Briefing entre áreas:</strong> informações de entrada, necessidade, responsável e entrega esperada.</li><li><strong style="font-weight:400;color:#351937">Planejamento dos canais:</strong> modelos para CRM e Mídia Paga, com estratégia, lógica de atuação e desdobramentos.</li><li><strong style="font-weight:400;color:#351937">Desdobramento criativo:</strong> demanda de peças, mensagens, formatos, textos e encaminhamento para Design.</li><li><strong style="font-weight:400;color:#351937">Validação e passagem:</strong> critérios de revisão, registro de aprovação e informações para a próxima área.</li><li><strong style="font-weight:400;color:#351937">Acompanhamento:</strong> pauta e registro dos ritos, além dos materiais estratégicos, táticos e operacionais dos ciclos.</li></ul><p style="font-size:11px;color:#716773;margin:10px 0 0">Lista proposta para construção conjunta; adaptar modelos existentes quando atenderem ao novo fluxo.</p></article>
+    <article style="background:#fff;border:1px solid #e4dce5;border-radius:8px;padding:20px;font-size:13px"><h3 style="font-weight:400;font-size:17px;margin:0 0 10px;color:#762273">O que precisa estar claro para cada pessoa</h3><ul style="margin:0;padding-left:16px;display:flex;flex-direction:column;gap:6px"><li>Qual é sua responsabilidade no novo modelo.</li><li>Quais informações precisa receber para começar.</li><li>Que material deve desenvolver e como utilizá-lo.</li><li>Quem precisa envolver, consultar ou acionar.</li><li>Quem valida o trabalho e em qual momento.</li><li>O que deve entregar à próxima área e onde registrar.</li><li>Como reportar dúvidas, impedimentos e necessidade de ajuste.</li></ul></article>
+    <article style="background:#fff;border:1px solid #e4dce5;border-radius:8px;padding:20px;font-size:13px"><h3 style="font-weight:400;font-size:17px;margin:0 0 10px;color:#762273">Como avaliar a adoção</h3><ul style="margin:0;padding-left:16px;display:flex;flex-direction:column;gap:6px"><li>Uso dos novos materiais na rotina e qualidade do preenchimento.</li><li>Clareza de responsabilidades e autonomia para executar cada etapa.</li><li>Qualidade das passagens entre áreas.</li><li>Retrabalho, devoluções e tempo de espera por informações.</li><li>Registro de decisões e aprovações no Jira.</li><li>Feedback das pessoas sobre dificuldades e utilidade dos ritos e materiais.</li></ul></article>
+    <article style="background:#fff;border:1px solid #e4dce5;border-radius:8px;padding:20px;font-size:13px"><h3 style="font-weight:400;font-size:17px;margin:0 0 10px;color:#762273">Condições propostas para expandir</h3><ul style="margin:0;padding-left:16px;display:flex;flex-direction:column;gap:6px"><li>Time compreende as novas responsabilidades.</li><li>Materiais foram usados e ajustados a partir da prática.</li><li>Passagens entre áreas funcionam com clareza.</li><li>Problemas encontrados têm encaminhamento definido.</li><li>Gestores validaram os aprendizados e a preparação para outros projetos.</li></ul></article>
+  </div>
+  <div style="margin-top:14px;background:#fff1e6;border-left:4px solid #fe813e;border-radius:0 8px 8px 0;padding:18px 22px"><strong style="font-weight:400;font-size:16px;color:#79320b">Primeiro passo · alinhamento com todo o time do Fluminense</strong><p style="margin:6px 0 0;font-size:13px">Apresentar o novo modelo, discutir as mudanças por função e distribuir a construção dos materiais. A data de entrada em operação será combinada após essa preparação.</p></div>
+</sc-if>
+
+
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:900},&quot;secao&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;estrutura&quot;,&quot;canais&quot;,&quot;rotina&quot;,&quot;consulta&quot;,&quot;piloto&quot;,&quot;pendencias&quot;],&quot;default&quot;:&quot;estrutura&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const k = this.props.secao || 'estrutura';
+    const s = {}; ['estrutura','canais','rotina','consulta','piloto','pendencias'].forEach(x => s[x] = x === k);
+    return { s, pilotSteps: [
+      {n:'01', tag:'Alinhamento', title:'Alinhar o novo funcionamento com todos', text:'Apresentar ao time dedicado do Fluminense a nova estrutura, os fluxos entre áreas, os ritos e o papel de cada pessoa. Explicar o que muda na atuação do Planner, dos especialistas, de Comunicação e de Design. Recolher dúvidas e ajustar os pontos de entendimento.', who:'Head + gerentes, com Planner e todo o time dedicado ao clube.', out:'Entendimento comum do novo fluxo; responsabilidades discutidas; dúvidas registradas e tratadas.'},
+      {n:'02', tag:'Materiais', title:'Desenvolver os novos materiais e modelos', text:'Definir e construir os materiais necessários para a nova operação: planejamento, briefings, planos de canal, desdobramento de peças, registros de aprovação e acompanhamento. Estabelecer quem preenche, quem recebe e qual decisão cada material apoia.', who:'Planejamento + Inteligência, Comunicação e Canais, com seus gestores.', out:'Modelos revisados entre as áreas, exemplos preenchidos e orientações de uso disponíveis.'},
+      {n:'03', tag:'Preparação', title:'Preparar as pessoas e a rotina de trabalho', text:'Detalhar responsabilidades por função, treinar o uso dos materiais, organizar as passagens no Jira e combinar os ritos. Simular o percurso de uma demanda para verificar o que cada área recebe, desenvolve, valida e entrega à próxima.', who:'Gerentes e coordenadores, com Planner e especialistas do projeto.', out:'Pessoas orientadas; materiais e registros acessíveis; responsáveis e agendas definidos; passagens compreendidas.'},
+      {n:'04', tag:'Entrada em operação', title:'Iniciar o novo modelo no Fluminense', text:'Definir uma data de início e como tratar o trabalho já em andamento. Passar a usar os novos materiais, responsabilidades e fluxos na rotina do projeto, com apoio próximo dos gestores durante a adaptação.', who:'Planner articula a operação sob sua gestão; cada área assume suas entregas; gestores apoiam a transição.', out:'Data de início acordada, tratamento das demandas em curso definido e nova rotina em uso pelo time.'},
+      {n:'05', tag:'Acompanhamento', title:'Acompanhar a adoção e ajustar', text:'Usar os ritos para observar dúvidas, retrabalho, passagens incompletas e sobreposição ou ausência de responsabilidade. Recolher feedback do time e corrigir materiais e orientações conforme a experiência de uso.', who:'Planner + gestores + time dedicado; coordenadores envolvidos conforme a necessidade.', out:'Registro de dificuldades, ajustes priorizados e versões atualizadas dos materiais e do manual.'},
+      {n:'06', tag:'Consolidação', title:'Consolidar o modelo antes da expansão', text:'Avaliar se o time compreende e consegue executar o novo funcionamento, quais materiais precisam de ajustes e quais condições são necessárias para levar o modelo a outros projetos.', who:'Head + gerentes, com feedback do Planner, coordenadores e time dedicado.', out:'Modelo revisado, responsabilidades consolidadas e decisão sobre expansão ou continuidade da adaptação no Fluminense.'}
+    ]};
+  }
+}
+</script>
+</body>
+</html>
